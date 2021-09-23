@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <!DOCTYPE html>
-<html>
+<html data-theme="cupcake">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +9,15 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="shortcut icon" href="" />
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/css/tailwind.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/css/daisyui.full.css');?>">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/font-awesome/css/font-awesome.min.css');?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/Ionicons/css/ionicons.min.css');?>">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/AdminLTE.min.css');?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/responsivelogin.css');?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/AdminLTE.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/responsivelogin.css');?>"> -->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +27,7 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"><style type="text/css">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"><style type="text/css">
         .navbar-inverse{
         background-color:#333;
          }
@@ -40,63 +41,46 @@
            @keyframes blinker {
                 50% { opacity: 0; }
            }
-    </style>
+    </style> -->
   </head>
-<body class="hold-transition login-page" style="overflow-y: hidden;background:url(
-	'<?php echo base_url('assets_style/image/bg-login.jpg');?>')no-repeat;background-size:100%;">
-<div class="login-box">
-	<br/>
-  <div class="login-box-body text-center bg-white">
-    <h3><a href="index.php" style="color: #226bbf;">Sistem Informasi Perpustakaan <br/><b>SDN 4 Gabus</b></a></h3>
-  </div>
-  <p>
-  <div id="tampilalert"></div>
-  <!-- /.login-logo -->
-  <div class="login-box-body" style="border:2px solid #226bbf;">
-    <p class="login-box-msg" style="font-size:16px;"></p>
-    <form action="<?= base_url('login/auth');?>" method="POST">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username" id="user" name="user" required="required" autocomplete="off">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" id="pass" name="pass" required="required" autocomplete="off">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-        <!-- /.col
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox" name="remember" id="remember" value="R1"> Remember Me
-            </label>
-          </div>-->
-          <!-- /.social-auth-links -->
+<body>
+<div class="hero min-h-screen bg-base-200">
+  <div class="flex-col justify-center hero-content lg:flex-row">
+    <div class="text-center lg:text-left">
+      <h1 class="mb-5 text-6xl font-bold">
+            Sistem Informasi Perpustakaan SDN 4 Gabus
+          </h1> 
+      <!-- <p class="mb-5">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+          </p> -->
+    </div> 
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+      <form action="<?= base_url('login/auth');?>" method="POST">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Username</span>
+          </label> 
+          <input type="text" placeholder="Username" class="input input-bordered" id="user" name="user" required="required" autocomplete="off">
+        </div> 
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label> 
+          <input type="text" placeholder="Password" class="input input-bordered" id="pass" name="pass" required="required" autocomplete="off"> 
+          <label class="label">
+          <div data-tip="Silahkan datang ke Perpustakaan dan tanyakan kepada petugas" class="tooltip">
+            <span class="label-text-alt">Lupa Password?</span>
+            </div>
+          </label>
+        </div> 
+        <div class="form-control mt-6">
+          <button type="submit" value="Login" id="loding" class="btn btn-primary">Login</button>
         </div>
-        <div class="col-xs-4">
-          <button type="submit" id="loding" class="btn btn-primary btn-block btn-flat">Sign In</button>
-          <div id="loadingcuy"></div>
-        </div>
-        <!-- /.col -->
+      </form>
       </div>
-    </form>
-  </div>
-  <!-- /.login-box-body -->
-  <br/>
-  <footer>
-    <div class="login-box-body text-center bg-white">
-       <a style="color: black;"> &copy; <?php echo date("Y");?> Sistem Perpustakaan SDN 4 Gabus
     </div>
-  </footer>
+  </div>
 </div>
-<!-- /.login-box -->
-<!-- Response Ajax -->
-<div id="tampilkan"></div>
-<!-- jQuery 3 -->
-<script src="<?php echo base_url('assets_style/assets/bower_components/jquery/dist/jquery.min.js');?>"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url('assets_style/assets/bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
-<!-- iCheck -->
-<script src="<?php echo base_url('assets_style/assets/plugins/iCheck/icheck.min.js');?>"></script>
 </body>
 </html>
