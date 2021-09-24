@@ -51,7 +51,7 @@ class Login extends CI_Controller {
             echo '<script>window.location="'.base_url().'dashboard";</script>';
         }else{
 
-            $this->session->set_flashdata('error','Username & Password salah');
+            $this->session->set_flashdata('error','Username atau Password salah');
 			redirect('login');
         }
     }
