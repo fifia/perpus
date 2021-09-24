@@ -51,8 +51,8 @@ class Login extends CI_Controller {
             echo '<script>window.location="'.base_url().'dashboard";</script>';
         }else{
 
-            echo '<script>alert("Login Gagal, Periksa Kembali Username dan Password Anda");
-            window.location="'.base_url().'"</script>';
+            $this->session->set_flashdata('error','Username & Password salah');
+			redirect('login');
         }
     }
 
