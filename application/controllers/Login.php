@@ -43,7 +43,7 @@ class Login extends CI_Controller
             $hasil_login = $proses_login->row_array();
 
             // create session
-            $this->session->set_userdata('masuk_perpus', TRUE);
+            $this->session->set_userdata('masuk_sistem_rekam', TRUE);
             $this->session->set_userdata('level', $hasil_login['level']);
             $this->session->set_userdata('ses_id', $hasil_login['id_login']);
             $this->session->set_userdata('anggota_id', $hasil_login['anggota_id']);
@@ -51,8 +51,8 @@ class Login extends CI_Controller
             echo '<script>window.location="' . base_url() . 'dashboard";</script>';
         } else {
 
-            $this->session->set_flashdata('error', 'Username & Password salah');
-            redirect('login')
+            echo '<script>alert("Login Gagal, Periksa Kembali Username dan Password Anda");
+            window.location="' . base_url() . '"</script>';
         }
     }
 
