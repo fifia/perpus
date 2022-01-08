@@ -26,8 +26,10 @@
 <script src="<?= base_url('assets/'); ?>/vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/init.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/dashboard-data.js"></script>
-<script src="<?= base_url('assets_style/'); ?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?= base_url('assets_style/'); ?>/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/dataTables-data.js"></script>
 
 </body>
 
