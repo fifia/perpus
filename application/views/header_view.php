@@ -15,7 +15,6 @@
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/css/style.css" rel="stylesheet" type="text/css">
-  <link href="<?= base_url('assets_style/'); ?>/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
     $(document).ajaxStart(function() {
       Pace.restart();
