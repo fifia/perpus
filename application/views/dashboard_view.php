@@ -16,7 +16,7 @@
           if ($jam > 11 && $jam <= 14) {
             return "🌞 Selamat siang, ";
           } else {
-            if ($jam > 15 && $jam <= 18) {
+            if ($jam > 14 && $jam <= 18) {
               return "🌥️ Selamat sore, ";
             } else {
               return "🌗 Selamat malam, ";
