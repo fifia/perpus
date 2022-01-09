@@ -14,6 +14,7 @@
 </div>
 <script src="<?= base_url('assets/'); ?>/vendors/jquery/dist/jquery.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/jquery.counterup/jquery.counterup.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/dropdown-bootstrap-extended.js"></script>
