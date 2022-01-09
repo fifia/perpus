@@ -1,4 +1,4 @@
-<?php if(! defined('BASEPATH')) exit('No direct script acess allowed');?>
+<?php if (!defined('BASEPATH')) exit('No direct script acess allowed'); ?>
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
 	<ol class="breadcrumb breadcrumb-light bg-transparent">
 		<li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
@@ -20,76 +20,79 @@
 								<div class="card mb-20">
 									<div class="card-body">
 										<h5 class="card-title">
-							<?php if(!empty($this->input->get('id'))){?>
-							<h4> Edit Kategori</h4>
-							<?php }else{?>
-							<h4> Tambah Kategori</h4>
-							<?php }?>
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-							<?php if(!empty($this->input->get('id'))){?>
-							<form method="post" action="<?= base_url('data/katproses');?>">
-								<div class="form-group">
-								<label for="">Nama Kategori</label>
-								<input type="text" name="kategori"  value="<?=$kat->nama_kategori;?>" id="kategori" class="form-control"  placeholder="Contoh : Pemrograman Web" >
-								
+											<?php if (!empty($this->input->get('id'))) { ?>
+												Edit Kategori
+											<?php } else { ?>
+												Tambah Kategori
+											<?php } ?>
+										</h5>
+										<div class="card-body">
+											<?php if (!empty($this->input->get('id'))) { ?>
+												<form method="post" action="<?= base_url('data/katproses'); ?>">
+													<div class="form-group">
+														<label for="">Nama Kategori</label>
+														<input type="text" name="kategori" value="<?= $kat->nama_kategori; ?>" id="kategori" class="form-control" placeholder="Contoh : Dongeng">
+													</div>
+													<br />
+													<input type="hidden" name="edit" value="<?= $kat->id_kategori; ?>">
+													<div class="card-footer">
+														<button type="submit" class="btn btn-success btn-wth-icon btn-rounded text-white icon-right"><span class="icon-label"><span class="feather-icon"><i data-feather="edit-3"></i></span></span><span class="btn-text">Edit</span></button>
+													</div>
+												</form>
+											<?php } else { ?>
+												<form method="post" action="<?= base_url('data/katproses'); ?>">
+													<div class="form-group">
+														<label for="">Nama Kategori</label>
+														<input type="text" name="kategori" id="kategori" class="form-control" placeholder="Contoh : Pemrograman Web">
+													</div>
+													<br />
+													<input type="hidden" name="tambah" value="tambah">
+													<div class="card-footer">
+														<button type="submit" class="btn btn-success btn-wth-icon btn-rounded text-white icon-right"><span class="icon-label"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Tambah</span></button>
+													</div>
+												</form>
+											<?php } ?>
+										</div>
+									</div>
 								</div>
-								<br/>
-								<input type="hidden" name="edit" value="<?=$kat->id_kategori;?>">
-								<button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Edit Kategori</button>
-							</form>
-							<?php }else{?>
-
-							<form method="post" action="<?= base_url('data/katproses');?>">
-								<div class="form-group">
-								<label for="">Nama Kategori</label>
-								<input type="text" name="kategori" id="kategori" class="form-control" placeholder="Contoh : Pemrograman Web" >
-								
+							</div>
+							<div class="col-lg-8 col-md-4 col-sm-12">
+								<div class="card mb-20">
+									<div class="card-body">
+										<h5 class="card-title">Data Kategori</h5>
+										<div class="table-wrap">
+											<table id="datable_1" class="table pb-30">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Kategori</th>
+														<th>Aksi</th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php $no = 1;
+													foreach ($kategori->result_array() as $isi) { ?>
+														<tr>
+															<td><?= $no; ?>.</td>
+															<td><?= $isi['nama_kategori']; ?></td>
+															<td style="width:20%;">
+																<a href="<?= base_url('data/kategori?id=' . $isi['id_kategori']); ?>"><button class="btn btn-icon btn-icon-circle btn-success btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-pencil"></i></span></button></a>
+																<a href="<?= base_url('data/katproses?kat_id=' . $isi['id_kategori']); ?>" onclick="return confirm('Anda yakin Kategori ini akan dihapus ?');">
+																	<button class="btn btn-icon btn-icon-circle btn-danger btn-icon-style-2"><span class="btn-icon-wrap"><i class="icon-trash"></i></span></button></a>
+															</td>
+														</tr>
+													<?php $no++;
+													} ?>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
-								<br/>
-								<input type="hidden" name="tambah" value="tambah">
-								<button type="submit" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah Kategori</button>
-							</form>
-							<?php }?>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-8">
-					<div class="box box-primary">
-						<div class="box-header with-border">
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-						<div class="table-responsive">
-							<table id="example1" class="table table-bordered table-striped table" width="100%">
-								<thead>
-									<tr>
-										<th>No</th>
-										<th>Kategori</th>
-										<th>Aksi</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php $no=1;foreach($kategori->result_array() as $isi){?>
-									<tr>
-										<td><?= $no;?></td>
-										<td><?= $isi['nama_kategori'];?></td>
-										<td style="width:20%;">
-											<a href="<?= base_url('data/kategori?id='.$isi['id_kategori']);?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
-											<a href="<?= base_url('data/katproses?kat_id='.$isi['id_kategori']);?>" onclick="return confirm('Anda yakin Kategori ini akan dihapus ?');">
-											<button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
-										</td>
-									</tr>
-								<?php $no++;}?>
-								</tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-    	</div>
-    </div>
-</section>
+			</section>
+		</div>
+	</div>
 </div>
