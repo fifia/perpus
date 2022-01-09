@@ -6,15 +6,13 @@
     </ol>
 </nav>
 <div class="container">
-
-    <!-- Title -->
     <div class="hk-pg-header">
         <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="users"></i></span></span>Data Pengguna</h4>
     </div>
     <div class="row">
         <div class="col-xl-12">
             <section class="hk-sec-wrapper">
-                <a href="user/tambah"><button class="btn btn-primary mb-30"><i class="fa fa-plus"> </i> Tambah Pengguna</button></a>
+            <a href="user/tambah" class="btn btn-success btn-wth-icon btn-rounded text-white icon-left mb-30"><span class="btn-text">Tambah Pengguna</span> <span class="icon-label"><span class="feather-icon"><i data-feather="user-plus"></i></span></span></a>
                 <div class="row">
                     <div class="col-lg">
                         <div class="table-wrap">
