@@ -1,22 +1,25 @@
 <?php if(! defined('BASEPATH')) exit('No direct script acess allowed');?>
-<div class="content-wrapper">
-  <section class="content-header">
-    <h1>
-      <i class="fa fa-edit" style="color:green"> </i>  <?= $title_web;?>
-    </h1>
-    <ol class="breadcrumb">
-			<li><a href="<?php echo base_url('dashboard');?>"><i class="fa fa-dashboard"></i>&nbsp; Dashboard</a></li>
-			<li class="active"><i class="fa fa-file-text"></i>&nbsp; <?= $title_web;?></li>
-    </ol>
-  </section>
-  <section class="content">
-	<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');}?>
+<nav class="hk-breadcrumb" aria-label="breadcrumb">
+	<ol class="breadcrumb breadcrumb-light bg-transparent">
+		<li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">Data</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Kategori</li>
+	</ol>
+</nav>
+<div class="container">
+	<div class="hk-pg-header">
+		<h4 class="hk-pg-title"><span class="pg-title-icon"><i class="fa fa-tags"></i></span>Kategori</h4>
+	</div>
 	<div class="row">
-	    <div class="col-md-12">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="box box-primary">
-						<div class="box-header with-border">
+		<div class="col-xl-12">
+			<section class="hk-sec-wrapper">
+				<div class="row">
+					<div class="col-sm">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-12">
+								<div class="card mb-20">
+									<div class="card-body">
+										<h5 class="card-title">
 							<?php if(!empty($this->input->get('id'))){?>
 							<h4> Edit Kategori</h4>
 							<?php }else{?>
