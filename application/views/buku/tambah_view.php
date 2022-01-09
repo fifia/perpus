@@ -1,22 +1,21 @@
 <?php if (!defined('BASEPATH')) exit('No direct script acess allowed'); ?>
-<div class="content-wrapper">
-    <section class="content-header">
-        <h1>
-            <i class="fa fa-plus" style="color:green"> </i> <?= $title_web; ?>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i>&nbsp; Dashboard</a></li>
-            <li class="active"><i class="fa fa-plus"></i>&nbsp; <?= $title_web; ?></li>
-        </ol>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
+<nav class="hk-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-light bg-transparent">
+        <li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('data'); ?>">Data Buku</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah Data Buku</li>
+    </ol>
+</nav>
+<div class="container">
+    <div class="hk-pg-header">
+        <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="plus"></i></span></span>Tambah Data Buku</h4>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <section class="hk-sec-wrapper">
+                <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-wth-icon btn-rounded text-white icon-left mb-30"><span class="icon-label"><span class="feather-icon"><i data-feather="arrow-left-circle"></i></span></span><span class="btn-text">Kembali</span></a>
+                <div class="row">
+                    <div class="col-sm">
                         <form action="<?php echo base_url('data/prosesbuku'); ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -64,7 +63,6 @@
                                         <label>Jumlah Buku</label>
                                         <input type="number" class="form-control" name="jml" placeholder="Jumlah buku : 12">
                                     </div>
-
                                     <div class="form-group">
                                         <label>Sampul <small style="color:green">(gambar) * opsional</small></label>
                                         <input type="file" accept="image/*" name="gambar">
@@ -75,19 +73,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Keterangan Lainnya</label>
-                                        <textarea class="form-control" name="ket" id="summernotehal" style="height:120px"></textarea>
+                                        <div class="tinymce-wrap">
+                                            <textarea class="form-control tinymce" name="ket" style="height:120px"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="pull-right">
                                 <input type="hidden" name="tambah" value="tambah">
-                                <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                                <button type="submit" class="btn btn-success btn-wth-icon btn-rounded text-white icon-right"><span class="btn-text">Tambah</span> <span class="icon-label"><span class="feather-icon"><i data-feather="plus"></i></span></span></button>
                         </form>
-                        <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-</div>
-</section>
+    </div>
 </div>
