@@ -6,10 +6,19 @@ $(document).ready(function() {
 	$('#datable_1').DataTable({
 		responsive: true,
 		autoWidth: false,
-		language: { search: "",
-		searchPlaceholder: "Search",
-		sLengthMenu: "_MENU_items"
-
+		language: { 
+			search: "",
+			searchPlaceholder: "Cari..",
+			lengthMenu: "Tampilkan _MENU_ baris data",
+			info: "Menampilkan _END_ dari total _TOTAL_ data",
+			infoEmpty: "Data tidak ada",
+			infoFiltered: "(difilter dari _MAX_ total data)",
+			paginate: {
+				first:   "Awal",
+				last:    "Akhir",
+				next:    '<i class="zmdi zmdi-arrow-right"></i>',
+				previous:'<i class="zmdi zmdi-arrow-left"></i>'
+			}
 		}
 	});
     $('#datable_2').DataTable({ 

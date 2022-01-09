@@ -14,11 +14,14 @@
 </div>
 <script src="<?= base_url('assets/'); ?>/vendors/jquery/dist/jquery.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/jquery.counterup/jquery.counterup.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/dropdown-bootstrap-extended.js"></script>
-<script src="<?= base_url('assets/'); ?>//js/feather.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/feather.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/jquery-toggles/toggles.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/tinymce/tinymce.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/tinymce-data.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/toggle-data.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/vendors/jquery.counterup/jquery.counterup.min.js"></script>
@@ -26,6 +29,10 @@
 <script src="<?= base_url('assets/'); ?>/vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/init.js"></script>
 <script src="<?= base_url('assets/'); ?>/js/dashboard-data.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/dataTables-data.js"></script>
 
 </body>
 

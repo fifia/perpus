@@ -9,7 +9,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/plugins/timepicker/bootstrap-timepicker.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets_style/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link href="<?= base_url('assets/'); ?>/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url('assets/'); ?>/vendors/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">

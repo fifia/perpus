@@ -20,7 +20,7 @@ class User extends CI_Controller
 	{
 		$this->data['idbo'] = $this->session->userdata('ses_id');
 		$this->data['user'] = $this->M_Admin->get_table('tbl_login');
-
+		$this->data['count_pengguna'] = $this->db->query("SELECT * FROM tbl_login")->num_rows();
 		$this->data['title_web'] = 'Data User ';
 		$this->load->view('header_view', $this->data);
 		$this->load->view('sidebar_view', $this->data);
