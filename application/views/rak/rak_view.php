@@ -8,7 +8,7 @@
 </nav>
 <div class="container">
 	<div class="hk-pg-header">
-		<h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="users"></i></span></span>Rak Buku</h4>
+		<h4 class="hk-pg-title"><span class="pg-title-icon"><i class="fa fa-list"></i></span>Rak Buku</h4>
 	</div>
 	<div class="row">
 		<div class="col-xl-12">
