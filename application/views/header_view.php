@@ -14,7 +14,9 @@
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets_style/assets/bower_components/select2/dist/css/select2.min.css">
   <link href="<?= base_url('assets/'); ?>/css/style.css" rel="stylesheet" type="text/css">
+  <script src="<?= base_url('assets/'); ?>/vendors/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript">
     $(document).ajaxStart(function() {
       Pace.restart();
