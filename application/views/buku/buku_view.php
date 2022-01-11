@@ -22,8 +22,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>ID Buku</th>
                                         <th>ISBN</th>
-                                        <th>Title</th>
+                                        <th>Judul</th>
                                         <th>Penerbit</th>
                                         <th>Tahun Buku</th>
                                         <th>Stok Buku</th>
@@ -35,24 +36,23 @@
                                     <?php $no = 1;
                                     foreach ($buku->result_array() as $isi) { ?>
                                         <tr>
-                                            <td><?= $no; ?>.</td>
-                                            <td><?= $isi['isbn']; ?></td>
-                                            <td><?= $isi['title']; ?></td>
-                                            <td><?= $isi['penerbit']; ?></td>
-                                            <td><?= $isi['thn_buku']; ?></td>
-                                            <td><?= $isi['jml']; ?></td>
-                                            <td><?= $isi['tgl_masuk']; ?></td>
+                                            <td><small><?= $no; ?>.</small></td>
+                                            <td><a href="<?= base_url('data/bukudetail/' . $isi['id_buku']); ?>"><span class="badge badge-pink"><?= $isi['buku_id']; ?></span></a></td>
+                                            <td><span class="badge badge-dark"><?= $isi['isbn']; ?></span></td>
+                                            <td><small><?= $isi['title']; ?></small></td>
+                                            <td><small><?= $isi['penerbit']; ?></small></td>
+                                            <td><small><?= $isi['thn_buku']; ?></small></td>
+                                            <td><span class="badge badge-info"><?= $isi['jml']; ?></span></td>
+                                            <td><span class="badge badge-light"><?= $isi['tgl_masuk']; ?></span></td>
                                             <td <?php if ($this->session->userdata('level') == 'Petugas') { ?>style="width:17%;" <?php } ?>>
                                                 <?php if ($this->session->userdata('level') == 'Petugas') { ?>
                                                     <a href="<?= base_url('data/bukuedit/' . $isi['id_buku']); ?>"><button class="btn btn-icon btn-icon-circle btn-success btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-pencil"></i></span></button></a>
+                                                    <a href="<?= base_url('data/prosesbuku?buku_id=' . $isi['id_buku']); ?>" onclick="return confirm('Hapus buku <?= $isi['title']; ?>?');">
+                                                        <button class="btn btn-icon btn-icon-circle btn-danger btn-icon-style-2"><span class="btn-icon-wrap"><i class="icon-trash"></i></span></button></a>
+                                                <?php } else { ?>
                                                     <a href="<?= base_url('data/bukudetail/' . $isi['id_buku']); ?>">
-                                                        <button class="btn btn-icon btn-icon-circle btn-warning btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-info"></i></span></button>
-                                                        <a href="<?= base_url('data/prosesbuku?buku_id=' . $isi['id_buku']); ?>" onclick="return confirm('Hapus buku <?= $isi['title']; ?>?');">
-                                                            <button class="btn btn-icon btn-icon-circle btn-danger btn-icon-style-2"><span class="btn-icon-wrap"><i class="icon-trash"></i></span></button></a>
-                                                    <?php } else { ?>
-                                                        <a href="<?= base_url('data/bukudetail/' . $isi['id_buku']); ?>">
-                                                            <button class="btn btn-success btn-wth-icon btn-md btn-rounded icon-right"> <span class="icon-label"><span class="feather-icon"><i data-feather="arrow-right-circle"></i></span> </span><span class="btn-text">Lihat</span></button></a>
-                                                    <?php } ?>
+                                                        <button class="btn btn-success btn-wth-icon btn-md btn-rounded icon-right"> <span class="icon-label"><span class="feather-icon"><i data-feather="arrow-right-circle"></i></span> </span><span class="btn-text">Lihat</span></button></a>
+                                                <?php } ?>
                                             </td>
                                         </tr>
                                     <?php $no++;

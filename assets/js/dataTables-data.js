@@ -4,7 +4,11 @@
 
 $(document).ready(function() {
 	$('#datable_1').DataTable({
+		// dom: 'Bfrtip',
 		responsive: true,
+		// "bPaginate": false,
+		// "info":     false,
+		// "bFilter":     false,
 		autoWidth: false,
 		language: { 
 			search: "",
@@ -19,7 +23,13 @@ $(document).ready(function() {
 				next:    '<i class="zmdi zmdi-arrow-right"></i>',
 				previous:'<i class="zmdi zmdi-arrow-left"></i>'
 			}
-		}
+		},
+		// buttons: [
+		// 	'pdf', 'print'
+		// ],
+		// "drawCallback": function () {
+		// 	$('.dt-buttons > .btn').addClass('btn-outline-light btn-sm');
+		// }
 	});
     $('#datable_2').DataTable({ 
 		autoWidth: false,

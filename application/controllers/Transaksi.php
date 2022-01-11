@@ -66,12 +66,12 @@ class Transaksi extends CI_Controller
 		if ($this->session->userdata('level') == 'Anggota') {
 			$this->data['pinjam'] = $this->db->query("SELECT DISTINCT `pinjam_id`, `anggota_id`, 
 				`status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali` 
-				FROM tbl_pinjam WHERE anggota_id = ? AND status = 'Di Kembalikan' 
+				FROM tbl_pinjam WHERE anggota_id = ? AND status = 'Dikembalikan' 
 				ORDER BY id_pinjam DESC", array($this->session->userdata('anggota_id')));
 		} else {
 			$this->data['pinjam'] = $this->db->query("SELECT DISTINCT `pinjam_id`, `anggota_id`, 
 				`status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali` 
-				FROM tbl_pinjam WHERE status = 'Di Kembalikan' ORDER BY id_pinjam DESC");
+				FROM tbl_pinjam WHERE status = 'Dikembalikan' ORDER BY id_pinjam DESC");
 		}
 
 		$this->load->view('header_view', $this->data);
@@ -239,7 +239,7 @@ class Transaksi extends CI_Controller
 			}
 
 			$data = array(
-				'status' => 'Di Kembalikan',
+				'status' => 'Dikembalikan',
 				'tgl_kembali'  => date('Y-m-d'),
 			);
 
