@@ -7,7 +7,12 @@
 </nav>
 <div class="container">
 	<div class="hk-pg-header">
-		<h4 class="hk-pg-title"><span class="pg-title-icon"><i class="fa fa-upload"></i></span>Data Peminjaman</h4>
+		<h4 class="hk-pg-title"><span class="pg-title-icon">
+				<?php if ($this->session->userdata('level') == 'Petugas') { ?>
+					<i class="fa fa-upload"></i></span>Data Peminjaman</h4>
+	<?php } else { ?>
+		<i class="fa fa-download"></i></span>Data Peminjaman</h4>
+	<?php } ?>
 	</div>
 	<div class="row">
 		<div class="col-xl-12">
@@ -26,8 +31,8 @@
 										<th>ID Anggota</th>
 										<th>Nama</th>
 										<th>Pinjam</th>
-										<th>Kembali</th>
-										<th style="width:10%">Status</th>
+										<th>Harus Kembali</th>
+										<th>Status</th>
 										<th>Denda</th>
 										<th>Aksi</th>
 									</tr>
@@ -44,12 +49,12 @@
 									?>
 										<tr>
 											<td><?= $no; ?></td>
-											<td><?= $isi['pinjam_id']; ?></td>
-											<td><?= $isi['anggota_id']; ?></td>
-											<td><?= $ang->nama; ?></td>
-											<td><?= $isi['tgl_pinjam']; ?></td>
-											<td><?= $isi['tgl_balik']; ?></td>
-											<td><?= $isi['status']; ?></td>
+											<td><a class="" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id']); ?>"><?= $isi['pinjam_id']; ?></a></td>
+											<td><span class="badge badge-light"><?= $isi['anggota_id']; ?></span></td>
+											<td><small><strong><?= $ang->nama; ?></strong></small></td>
+											<td><small><?= $isi['tgl_pinjam']; ?></small></td>
+											<td><small><?= $isi['tgl_balik']; ?></small></td>
+											<td><span class="badge badge-success"><?= $isi['status']; ?></span></td>
 											<td>
 												<?php
 												if ($isi['status'] == 'Dikembalikan') {
@@ -66,8 +71,7 @@
 												' . $this->M_Admin->rp($jml * ($dd->harga_denda * $diff)) . ' 
 												</p><small style="color:#333;">* Untuk ' . $jml . ' Buku</small>';
 													} else {
-														echo '<p style="color:green;">
-												Tidak Ada Denda</p>';
+														echo '<span class="badge badge-info">Tidak ada denda</span></p>';
 													}
 												}
 												?>
@@ -83,8 +87,6 @@
 															<button class="btn btn-icon btn-icon-circle btn-success btn-icon-style-2 btn-sm"><span class="btn-icon-wrap"><i class="fa fa-check"></i></span></button>
 														</a>
 													<?php } ?>
-													<a href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id'] . '?pinjam=yes'); ?>" title="Detail peminjaman">
-														<button class="btn btn-icon btn-icon-circle btn-primary btn-icon-style-2 btn-sm"><span class="btn-icon-wrap"><i class="fa fa-eye"></i></span></button></a>
 													<a href="<?= base_url('transaksi/prosespinjam?pinjam_id=' . $isi['pinjam_id']); ?>" onclick="return confirm('Hapus data pinjam ini?');" title="Hapus">
 														<button class="btn btn-icon btn-icon-circle btn-danger btn-icon-style-2 btn-sm"><span class="btn-icon-wrap"><i class="icon-trash"></i></span></button></a>
 												<?php } else { ?>
