@@ -48,7 +48,7 @@
 										$total_denda = $denda->row();
 									?>
 										<tr>
-											<td><?= $no; ?></td>
+											<td><?= $no; ?>.</td>
 											<td><a class="" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id']); ?>"><?= $isi['pinjam_id']; ?></a></td>
 											<td><span class="badge badge-light"><?= $isi['anggota_id']; ?></span></td>
 											<td><small><strong><?= $ang->nama; ?></strong></small></td>
