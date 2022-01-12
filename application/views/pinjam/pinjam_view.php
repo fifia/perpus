@@ -2,12 +2,12 @@
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
 	<ol class="breadcrumb breadcrumb-light bg-transparent">
 		<li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">Dashboard</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Data Buku</li>
+		<li class="breadcrumb-item active" aria-current="page">Peminjaman</li>
 	</ol>
 </nav>
 <div class="container">
 	<div class="hk-pg-header">
-		<h4 class="hk-pg-title"><span class="pg-title-icon"><i class="fa fa-book"></i></span>Data Buku</h4>
+		<h4 class="hk-pg-title"><span class="pg-title-icon"><i class="fa fa-upload"></i></span>Data Peminjaman</h4>
 	</div>
 	<div class="row">
 		<div class="col-xl-12">
