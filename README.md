@@ -3,6 +3,10 @@
 ## Tech
 Codeigniter 3.1.11
 
+## Demo
+
+[https://perpus-sahfira.herokuapp.com/](https://perpus-sahfira.herokuapp.com/)
+
 ## default login
 ---
 ### petugas perpustakaan
